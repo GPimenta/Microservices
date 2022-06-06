@@ -20,6 +20,7 @@ public class CustomerService {
                 .email(request.email())
                 .build();
 
+        customerRepository.saveAndFlush(customer);
 
         FraudCheckResponse fraudCheckResponse = fraudClient.isFraudster(customer.getId());
 
